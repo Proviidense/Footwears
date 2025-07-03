@@ -26,7 +26,7 @@
 
         .gallery_heading {
             color: #C0963D;
-            font-size: 3em;
+            font-size: 3rem;
             animation: slideInLeft 2s ease-in-out;
         }
 
@@ -55,14 +55,18 @@
             object-fit: cover;
         }
 
-        #brand_logo_div {
+        .brand_logo_div {
             position: fixed;
             top: 30%;
             left: 23%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
         }
 
         #brand_logo {
-            font-size: 6em;
+            font-size: 6rem;
             font-family: 'Courier New', Courier, monospace;
             font-style: italic;
             font-weight: bolder;
@@ -80,8 +84,6 @@
         }
 
         .head_nav_div {
-            padding: 20px;
-            padding-left: 0px;
             background-color: rgba(120, 119, 119, 0.2);
             height: 50px;
             backdrop-filter: blur(200px);
@@ -91,27 +93,41 @@
             box-shadow: 0px 0px 10px rgba(190, 187, 180, 0.5);
         }
 
-        .head_nav ul {
+        .main_nav {
             display: flex;
             flex-direction: row;
-            column-gap: 40px;
-            margin: 0px;
-            height: 50px;
+            justify-content: center;
             align-items: center;
+            margin-bottom: 20px;
         }
 
-        .head_nav ul li {
+        .head_nav {
+            background-color: rgba(120, 119, 119, 0.2);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            column-gap: 10px;
+            backdrop-filter: blur(200px);
+            border-radius: 20px;
+            padding: 20px;
+            height: 50px;
+            box-shadow: 0px 0px 10px rgba(190, 187, 180, 0.5);
+        }
+
+        .nav_list {
             color: #C3BFB8;
             transition: all 0.5s ease-in-out;
-            font-size: 1.2em;
+            font-size: 1.2rem;
         }
 
-        .head_nav ul li a{
+        .nav_list a{
             text-decoration: none;
             color: #C3BFB8;
         }
 
-        .head_nav ul li:hover {
+        .nav_list:hover {
             text-decoration: underline;
             opacity: 0.8;
         }
@@ -124,13 +140,63 @@
 
         .dotted_logo {
             color: #9A5602;
-            font-size: 5em;
+            font-size: 5rem;
             line-height: 15px;
             transform: rotateY(180deg);
             opacity: 0.5;
         }
 
+        .image_viewport {
+            min-width: 100vw;
+            min-height: 100vh;
+            background-color: black;
+            position: fixed;
+            top: 0px;
+            left: 0px;  
+            opacity: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .image_viewport2 {
+            display: none;
+        }
+
+        .image_view {
+            max-width: 50%;
+            height: 400px;
+            flex: 1;
+            background-color: rgba(198, 197, 195, 0.9);
+            opacity: 1;
+            animation: fadeOut 1s ease-in-out;
+        }
+
+        .view_image {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            object-fit: contain;
+        }
+
+        .back_button {
+            background-color: black;
+            border: none;
+            height: 60px;
+            position: absolute;
+            top: 10px;
+            left: 0px;
+        }
+
+        .back_icon {
+            height: 100%;
+            object-fit: cover;
+        }
+
         @media (max-width: 700px) {
+            .back_button {
+                height: 30px;
+            }
             .gallery_heading {
                 font-size: 1.5rem;
             }
@@ -139,26 +205,32 @@
                 grid-template-columns: 1fr 1fr 1fr;
             }
 
+            .main_head_nav {
+            }
+
             .head_nav_div {
-                height: 30px;
+            }
+
+            .head_nav {
+                width: 80%;
+                column-gap: 10px;
+                padding: 10px;
             }
 
             .head_nav ul {
-                column-gap: 20px;
-                height: 30px;
             }
 
-            .head_nav ul li {
-                font-size: 0.6em;
+            .nav_list {
+                font-size: 0.7em;
             }
 
-            #brand_logo_div {
+            .brand_logo_div {
                 top: 50%;
 
             }
 
             #brand_logo {
-                font-size: 2em;
+                font-size: 2rem;
             }
 
             .dotted_logo_div {
@@ -167,7 +239,7 @@
             }
 
             .dotted_logo {
-                font-size: 2em;
+                font-size: 2rem;
                 line-height: 5px;
             }
 
@@ -182,25 +254,30 @@
     </style>
 </head>
 <body>
-    <div class="main_head_nav">
-        <div class="head_nav_div">
-            <nav class="head_nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li>Services</li>
-                    <li>Products</li>
-                    <li>Sign In</li>
-                    <li>Contact</li>
-                </ul>
-            </nav>
+    <div class="image_viewport image_viewport2">
+        <button class="back_button">
+            <img src="back.png" alt="" class="back_icon" onclick="goBack()">
+        </button>
+        <div class="image_view">
+            <img src="" alt="" class="view_image">
+
         </div>
     </div>
-    <div class="dotted_logo_div">
+    <div class="main_nav">
+        <nav class="head_nav">
+            <p class="nav_list"><a href="index.html">&#183; Home</a></p>
+            <p class="nav_list">&#183; Services</p>
+            <p class="nav_list">&#183; Products</p>
+            <p class="nav_list">&#183; Sign In</p>
+            <p class="nav_list">&#183; Contact</p>
+        </nav>
+    </div>
+    <div class="dotted_logo_div main">
         <p class="dotted_logo">
             
         </p>
     </div>
-    <div id="brand_logo_div">
+    <div class="brand_logo_div main">
         <p id="brand_logo" class="palm_craft">VEE'S FEET ART</p>
     </div>
     <div class="gallery">
@@ -215,6 +292,10 @@
         document.querySelector('.dotted_logo').innerText = '....................\n..................\n................\n..............\n............\n..........'
         const galleryPhotos = document.querySelector('.gallery_photos')
 
+        const main = document.querySelectorAll('.main')
+        const viewPort = document.querySelector('.image_viewport')
+        const theImage = document.querySelector('.view_image')
+
         const photosData = [['palm1', 'png'], ['palm2', 'png'], ['palm3', 'png'], ['palm4', 'png'], ['palm5', 'png'], ['palm6', 'png'], ['palm7', 'png'], ['palm8', 'png'], ['palm9', 'png'], ['palm10', 'png'], ['palm11', 'png'], ['palm12', 'png'], ['palm13', 'png'], ['palm14', 'png']]
         
 
@@ -227,17 +308,34 @@
 
             newImage.src = `${theList[0]}.${theList[1]}`
 
+            newImage.addEventListener('click', function(value) {
+                viewImage(value.target.src)
+            })
+
 
             newImageDiv.appendChild(newImage)
             galleryPhotos.appendChild(newImageDiv)
 
-            console.log(galleryPhotos)
         }
 
         photosData.forEach(function(value) {
             addPhotos(value)
-            console.log(value)
         })
+
+        function viewImage(image_url) {
+            main.forEach(function(value) {
+                value.classList.add('image_viewport2')
+            })
+            viewPort.classList.remove('image_viewport2')
+            theImage.src = image_url
+        }
+
+        function goBack() {
+            viewPort.classList.add('image_viewport2')
+            main.forEach(function(value) {
+                value.classList.remove('image_viewport2')
+            })
+        }
     </script>
 </body>
 </html>

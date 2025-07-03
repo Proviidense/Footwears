@@ -1,4 +1,4 @@
-/storage/emulated/0/Footwears/images<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -138,8 +138,8 @@
             margin-left: 25%;
 
         }
-
-        #container_img_two {
+        #container_img_two
+ {
             object-fit: contain;
             height: 100%;
             transition: transform 0.5s ease-in-out;
@@ -213,6 +213,7 @@
 
         .details_image {
             width: 100%;
+            min-height: 60vh;
             background-color: #54423A;
             border-radius: 50px;
             border: 2px solid #9A5602;
@@ -265,51 +266,48 @@
         }
 
 
-        .main_head_nav {
+        .main_nav {
             display: flex;
             flex-direction: row;
             justify-content: center;
-            backdrop-filter: blur(200px);
-        }
-
-        .head_nav_div {
-            padding: 20px;
-            padding-left: 0px;
-            background-color: rgba(120, 119, 119, 0.2);
-            height: 50px;
-            backdrop-filter: blur(200px);
-            -webkit-backdrop-filter: blur(200px);
-            border-radius: 20px;
+            align-items: center;
+            margin-bottom: 20px;
             margin-top: 20px;
-            box-shadow: 0px 0px 10px rgba(190, 187, 180, 0.5);
         }
 
-        .head_nav ul {
+        .head_nav {
+            width: 60%;
+            background-color: rgba(120, 119, 119, 0.2);
             display: flex;
             flex-direction: row;
-            column-gap: 40px;
-            margin: 0px;
-            height: 50px;
+            justify-content: center;
             align-items: center;
+            margin: 0px;
+            column-gap: 60px;
+            backdrop-filter: blur(200px);
+            border-radius: 20px;
+            padding: 20px;
+            height: 50px;
+            box-shadow: 0px 0px 10px rgba(190, 187, 180, 0.4);
         }
 
-        .head_nav ul li {
+        .nav_list {
             color: #C3BFB8;
             transition: all 0.5s ease-in-out;
-            font-size: 1.2rem;
+            font-size: 1.5em;
         }
 
-        .head_nav ul li a{
+        .nav_list a{
             text-decoration: none;
             color: #C3BFB8;
         }
 
-        .head_nav ul li:hover {
+        .nav_list:hover {
             text-decoration: underline;
             opacity: 0.8;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 900px) {
             @keyframes moveFade {
                 0% { transform: translateY(0%); }
                 50% { transform: translateY(600%); }
@@ -323,7 +321,7 @@
                 55%, 100% { opacity: 0; }
             }
             #brand_name {
-                font-size: 2rem;
+                font-size: 2.3em;
                 margin: 0px;
                 margin-left: 2%;
             }
@@ -346,8 +344,8 @@
             }
 
             #inner_two {
-                margin-top: 100%;
-                margin-left: -100%;
+                margin-top: 200px;
+                margin-left: -200px;
                 opacity: 0.3;
             }
 
@@ -370,7 +368,7 @@
             }
 
             .inner_details {
-                padding-top: 40px;
+                padding-top: 20px;
                 border-bottom: 0px;
             }
 
@@ -383,30 +381,13 @@
                 font-size: 1.5rem;
             }
 
-            .description {
-                
-            }
-
-            .head_nav_div {
-                height: 30px;
-            }
-
-            .head_nav ul {
-                column-gap: 20px;
-                height: 30px;
-            }
-
-            .head_nav ul li {
-                font-size: 0.6em;
-            }
-
             .dotted_logo_div {
                 top: -40px;
                 left: 75%;
             }
 
             .dotted_logo {
-                font-size: 2em;
+                font-size: 2rem;
                 line-height: 5px;
             }
 
@@ -416,11 +397,11 @@
             }
 
             #brand_logo {
-                font-size: 2em;
+                font-size: 2rem;
             }
 
             .description_text {
-                font-size: 1em;
+                font-size: 1rem;
                 text-decoration: solid;
                 font-weight: bolder;
             }
@@ -431,25 +412,41 @@
             }
 
             .h_line {
-                width: 88%;
+                width: 86%;
             }
 
+            #container_img_three {
+                margin-left: 25%;
+            }
+
+            .head_nav {
+                width: 70%;
+                column-gap: 10px;
+                padding: 10px;
+            }
+
+            .nav_list {
+                font-size: 0.7em;
+            }
+
+        }
+
+        @media (min-width: 910) and (max-width: 1500) {
+            .nav_list {
+                font-size: 0.7em;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="main_head_nav">
-        <div class="head_nav_div">
-            <nav class="head_nav">
-                <ul>
-                    <li>Services</li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li>Products</li>
-                    <li>Sign In</li>
-                    <li>Contact</li>
-                </ul>
-            </nav>
-        </div>
+    <div class="main_nav">
+        <nav class="head_nav">
+            <p class="nav_list">&#183; Services</p>
+            <p class="nav_list"><a href="gallery.html">&#183; Gallery</a></p>
+            <p class="nav_list">&#183; Products</p>
+            <p class="nav_list">&#183; Sign In</p>
+            <p class="nav_list">&#183; Contact</p>
+        </nav>
     </div>
     <div class="dotted_logo_div">
         <p class="dotted_logo">
