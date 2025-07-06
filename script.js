@@ -62,11 +62,11 @@ function animateGallery() {
     }
     @keyframes inner2 {
         from { transform: translate(0px, 0px); }
-        to { transform: translate(${newTarget2[0]}px, ${newTarget2[1]}px);height: 40%;width: 50%; }
+        to { transform: translate(${newTarget2[0]}px, ${newTarget2[1]}px);height: 40%;width: 50%;opacity: 0.5; }
     }
     @keyframes inner3 {
         from { transform: translate(0px, 0px); }
-        to { transform: translate(${newTarget3[0]}px, ${newTarget3[1]}px);height: 70%;width: 100%; }
+        to { transform: translate(${newTarget3[0]}px, ${newTarget3[1]}px);height: 70%;width: 100%;opacity: 1; }
     }
         
     .inner1_animate {
