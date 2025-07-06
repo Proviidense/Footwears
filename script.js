@@ -43,7 +43,6 @@ function shuffleImage() {
 }
 
 function animateGallery() {
-    console.log(innerHg)
     innerHg.forEach(function(theValue) {
         theValue.classList.remove(theValue.classList[2])
     })
@@ -51,13 +50,9 @@ function animateGallery() {
     let target2 = innerHg[1].getBoundingClientRect()
     let target3 = innerHg[2].getBoundingClientRect()
 
-    console.log(target1, target2, target3)
-
     let newTarget1 = [target3.x-target1.x, target3.y-target1.y]
     let newTarget2 = [target1.x-target2.x, target1.y-target2.y]
     let newTarget3 = [((target2.x-target3.x) + (target2.x-target1.right)), target2.y-target3.y]
-
-    console.log(newTarget1, newTarget2, newTarget3)
 
     const style = document.createElement('style')
     style.innerHTML = `
@@ -89,7 +84,6 @@ function animateGallery() {
     innerHg[0].classList.add('inner1_animate')
     innerHg[1].classList.add('inner2_animate')
     innerHg[2].classList.add('inner3_animate')
-    console.log(innerHg[0].classList)
     shuffleImage()
     
 }
@@ -141,10 +135,8 @@ const secondObserver = new IntersectionObserver(function(values) {
 function rotateBg(value) {
     let count = 0
     image.forEach(function(value) {
-        console.log(value.src)
         value.src = imageList[count]
         count++
-        console.log(imageList)
     })
     reshufle()
 }
