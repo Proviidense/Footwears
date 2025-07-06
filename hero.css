@@ -174,8 +174,8 @@
     }
 
     #inner_two {
-        margin-top: 200px;
-        margin-left: -200px;
+        margin-top: 100%;
+        margin-left: -100%;
         opacity: 0.3;
     }
 
