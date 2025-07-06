@@ -1,0 +1,1 @@
+const photosData = [['palm1', 'png'], ['palm2', 'png'], ['palm3', 'png'], ['palm4', 'png'], ['palm5', 'png'], ['palm6', 'png'], ['palm7', 'png'], ['palm8', 'png'], ['palm9', 'png'], ['palm10', 'png'], ['palm11', 'png'], ['palm12', 'png'], ['palm13', 'png'], ['palm14', 'png']]

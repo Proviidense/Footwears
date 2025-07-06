@@ -1,0 +1,82 @@
+.brand_logo_div {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+#brand_logo {
+    font-size: 6rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-weight: bolder;
+    color: #C3BFB8;
+    opacity: 0.2;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.dotted_logo_div {
+    position: fixed;
+    top: -100px;
+    left: 78%;
+}
+
+.dotted_logo {
+    color: #C3BFB8;
+    font-size: 5rem;
+    line-height: 15px;
+    transform: rotateY(180deg);
+    opacity: 0.5;
+    user-select: none;
+    pointer-events: none;
+}
+
+@media (max-width: 700px) {
+    .dotted_logo_div {
+        top: -40px;
+        left: 80%;
+    }
+
+    .dotted_logo {
+        font-size: 2rem;
+        line-height: 5px;
+    }
+
+    #brand_logo_div {
+        top: 50%;
+
+    }
+
+    #brand_logo {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1500px) {
+    .dotted_logo_div {
+        top: -60px;
+        left: 80%;
+    }
+
+    .dotted_logo {
+        font-size: 3rem;
+        line-height: 8px;
+    }
+
+    #brand_logo_div {
+        top: 40%;
+
+    }
+
+    #brand_logo {
+        font-size: 4rem;
+    }
+}

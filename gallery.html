@@ -4,240 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vee's Gallery</title>
+    <link rel="stylesheet" href="Styles/Home page styles/general.css">
+    <link rel="stylesheet" href="Styles/Home page styles/logos.css">
+    <link rel="stylesheet" href="Styles/Home page styles/nav.css">
+    <link rel="stylesheet" href="Styles/Galllery styles/gallery.css">
+    <link rel="stylesheet" href="Styles/Galllery styles/image_view.css">
     <style>
-        @keyframes fadeOut {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideInLeft {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0%); }
-        }
-
-        body {
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-size: cover;
-            background-color: #010101;
-            margin: 0px;
-            padding: 20px;
-        }
-
-        .gallery_heading {
-            color: #C0963D;
-            font-size: 3rem;
-            animation: slideInLeft 2s ease-in-out;
-        }
-
-        .gallery {
-            padding: 30px;
-            border: 2px solid rgba(110, 109, 109, 0.3);
-            border-radius: 80px;
-        }
-
-        .gallery_photos {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            border-radius: 60px;
-            border: 1px solid rgba(1, 1, 1, 0.4);
-            animation: fadeOut 2s ease-in-out;
-        }
-
-        .new_image_div {
-            border: 2px solid rgba(1, 1, 1, 0.4);
-            background-color: rgba(198, 197, 195, 0.9);
-        }
-
-        .new_image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .brand_logo_div {
-            position: fixed;
-            top: 30%;
-            left: 23%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
-
         #brand_logo {
-            font-size: 6rem;
-            font-family: 'Courier New', Courier, monospace;
-            font-style: italic;
-            font-weight: bolder;
             color: #9A5602;
-            opacity: 0.2;
-        }
-
-        .main_nav {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .head_nav {
-            background-color: rgba(120, 119, 119, 0.2);
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin: 0px;
-            column-gap: 50px;
-            backdrop-filter: blur(200px);
-            border-radius: 20px;
-            padding: 20px;
-            height: 50px;
-            box-shadow: 0px 0px 10px rgba(190, 187, 180, 0.5);
-        }
-
-        .nav_list {
-            color: #C3BFB8;
-            transition: all 0.5s ease-in-out;
-            font-size: 1.2em;
-        }
-
-        .nav_list a{
-            text-decoration: none;
-            color: #C3BFB8;
-        }
-
-        .nav_list:hover {
-            text-decoration: underline;
-            opacity: 0.8;
-        }
-
-        .dotted_logo_div {
-            position: fixed;
-            top: -100px;
-            left: 78%;
         }
 
         .dotted_logo {
             color: #9A5602;
-            font-size: 5rem;
-            line-height: 15px;
-            transform: rotateY(180deg);
-            opacity: 0.5;
-        }
-
-        .image_viewport {
-            min-width: 100vw;
-            min-height: 100vh;
-            background-color: black;
-            position: fixed;
-            top: 0px;
-            left: 0px;  
-            opacity: 1;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
-        .image_viewport2 {
-            display: none;
-        }
-
-        .image_view {
-            max-width: 50%;
-            height: 400px;
-            flex: 1;
-            background-color: rgba(198, 197, 195, 0.9);
-            opacity: 1;
-            animation: fadeOut 1s ease-in-out;
-        }
-
-        .view_image {
-            width: 100%;
-            height: 100%;
-            opacity: 1;
-            object-fit: contain;
-        }
-
-        .back_button {
-            background-color: black;
-            border: none;
-            height: 60px;
-            position: absolute;
-            top: 10px;
-            left: 0px;
-        }
-
-        .back_icon {
-            height: 100%;
-            object-fit: cover;
-        }
-
-        @media (max-width: 700px) {
-            .back_button {
-                height: 30px;
-            }
-            .gallery_heading {
-                font-size: 1.5rem;
-            }
-
-            .gallery_photos {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-
-            .main_head_nav {
-            }
-
-            .head_nav_div {
-            }
-
-            .head_nav {
-                width: 80%;
-                column-gap: 0.35em;
-                padding: 10px;
-            }
-
-            .head_nav ul {
-            }
-
-            .nav_list {
-                font-size: 0.7em;
-            }
-
-            .brand_logo_div {
-                top: 50%;
-
-            }
-
-            #brand_logo {
-                font-size: 2rem;
-            }
-
-            .dotted_logo_div {
-                top: -40px;
-                left: 75%;
-            }
-
-            .dotted_logo {
-                font-size: 2rem;
-                line-height: 5px;
-            }
-
-
-        }
-
-        @media (min-width: 710px) and (max-width: 1100px) {
-            .gallery_photos {
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-            }
-        }
+        }  
     </style>
 </head>
 <body>
     <div class="image_viewport image_viewport2">
         <button class="back_button">
-            <img src="back.png" alt="" class="back_icon" onclick="goBack()">
+            <img src="images/Gallery/back.png" alt="" class="back_icon" onclick="goBack()">
         </button>
         <div class="image_view">
             <img src="" alt="" class="view_image">
@@ -269,54 +54,10 @@
         </div>
     </div>
 
-    <script>
-        document.querySelector('.dotted_logo').innerText = '....................\n..................\n................\n..............\n............\n..........'
-        const galleryPhotos = document.querySelector('.gallery_photos')
+    <script src="Scripts/General/photos.js"></script>
 
-        const main = document.querySelectorAll('.main')
-        const viewPort = document.querySelector('.image_viewport')
-        const theImage = document.querySelector('.view_image')
-
-        const photosData = [['palm1', 'png'], ['palm2', 'png'], ['palm3', 'png'], ['palm4', 'png'], ['palm5', 'png'], ['palm6', 'png'], ['palm7', 'png'], ['palm8', 'png'], ['palm9', 'png'], ['palm10', 'png'], ['palm11', 'png'], ['palm12', 'png'], ['palm13', 'png'], ['palm14', 'png']]
+    <script src="Scripts/Gallery Scripts/script.js">
         
-
-        function addPhotos(theList) {
-            const newImageDiv = document.createElement('div')
-            const newImage = document.createElement('img')
-
-            newImageDiv.classList.add('new_image_div')
-            newImage.classList.add('new_image')
-
-            newImage.src = `${theList[0]}.${theList[1]}`
-
-            newImage.addEventListener('click', function(value) {
-                viewImage(value.target.src)
-            })
-
-
-            newImageDiv.appendChild(newImage)
-            galleryPhotos.appendChild(newImageDiv)
-
-        }
-
-        photosData.forEach(function(value) {
-            addPhotos(value)
-        })
-
-        function viewImage(image_url) {
-            main.forEach(function(value) {
-                value.classList.add('image_viewport2')
-            })
-            viewPort.classList.remove('image_viewport2')
-            theImage.src = image_url
-        }
-
-        function goBack() {
-            viewPort.classList.add('image_viewport2')
-            main.forEach(function(value) {
-                value.classList.remove('image_viewport2')
-            })
-        }
     </script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+
+.footer {
+    background-color: #9A5602;
+    color: aliceblue;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_text {
+    text-align: center;
+}
