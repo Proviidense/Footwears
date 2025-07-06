@@ -1,4 +1,4 @@
-const imageList = ['images/palm3.png', 'images/palm.png', 'images/palm2.png']
+const imageList = ['palm3.png', 'palm.png', 'palm2.png']
 const image = document.querySelectorAll('.container_img')
 const middleDiv = document.querySelector('.inner_b')
 const containers = document.querySelector('.containers')
@@ -26,15 +26,15 @@ function shuffleImage() {
     let check = checker
     hgImage.forEach(function(value) {
         if (check < photosData.length) {
-            value.src = `images/Gallery/${photosData[check][0]}.${photosData[check][1]}`
+            value.src = `${photosData[check][0]}.${photosData[check][1]}`
             check++
         } else if (check >= photosData.length && checker < photosData.length) {
             check = 0
-            value.src = `images/Gallery/${photosData[check][0]}.${photosData[check][1]}`
+            value.src = `${photosData[check][0]}.${photosData[check][1]}`
             check++
         } else {
             checker = 0
-            value.src = `images/Gallery/${photosData[check][0]}.${photosData[check][1]}`
+            value.src = `${photosData[check][0]}.${photosData[check][1]}`
             check++
         }
     })
@@ -137,7 +137,6 @@ const secondObserver = new IntersectionObserver(function(values) {
         }
     })
 })
-console.log(detailsImg)
 
 function rotateBg(value) {
     let count = 0
