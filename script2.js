@@ -14,7 +14,7 @@ function addPhotos(theList) {
     newImageDiv.classList.add('new_image_div')
     newImage.classList.add('new_image')
 
-    newImage.src = `images/Gallery/${theList[0]}.${theList[1]}`
+    newImage.src = `${theList[0]}.${theList[1]}`
 
     newImage.addEventListener('click', function(value) {
         viewImage(value.target.src)
@@ -39,7 +39,6 @@ function viewImage(image_url) {
 }
 
 function goBack() {
-    console.log('helllle')
     viewPort.classList.add('image_viewport2')
     main.forEach(function(value) {
         value.classList.remove('image_viewport2')
