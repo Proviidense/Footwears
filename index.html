@@ -676,7 +676,7 @@
 
         <div class="containers" id="first_container">
             <div class="inner inner_a" id="inner_three">
-                <img src="images/palm3.png" alt="" class="container_img" id="container_img_three">
+                <img src="palm3.png" alt="" class="container_img" id="container_img_three">
                 <div class="description_div" id="description_div_two">
                     <h2 class="description_header" id="description_header_two">Welcome to Vee's Feet Art: Crafted for Every Step:</h2>
                     <p class="description" id="description_two">Vee's Feet Art specializes in creating high quality, hand made footwears, that combines comfort, style, and durability for both male and female. Whether you are stepping out for a casual outing, heading to work, or relaxing at home, our slippers are designed to match your lifestyle and express your unique taste.</p>
@@ -684,12 +684,12 @@
             </div>
         
             <div class="inner inner_b" id="inner_two">
-                <img src="images/palm.png" alt="" class="container_img" id="container_img_two">
+                <img src="palm.png" alt="" class="container_img" id="container_img_two">
             </div>
             
     
             <div class="inner inner_a" id="inner_one">
-                <img src="images/palm2.png" alt="" class="container_img" id="container_img_one">
+                <img src="palm2.png" alt="" class="container_img" id="container_img_one">
                 <div class="description_div" id="description_div_one">
                     <h2 id="description_header_one" class="description_header">Quality at it's peak:</h2>
                     <p id="description_one" class="description" >
@@ -735,23 +735,23 @@
         <div class="hg_img_div">
             <div class="first_inner">
                 <div class="hg_image hg_image1">
-                    <img src="images/palm2.png" alt="" class="hg_img hg_img1">
+                    <img src="palm2.png" alt="" class="hg_img hg_img1">
                 </div>
             </div>
 
             <div class="hg_image hg_image2">
-                <img src="images/palm.png" alt="" class="hg_img hg_img2">
+                <img src="palm.png" alt="" class="hg_img hg_img2">
             </div>
 
             <div class="first_inner">
                 <div class="hg_image hg_image3">
-                    <img src="images/palm3.png" alt="" class="hg_img hg_img3">
+                    <img src="palm3.png" alt="" class="hg_img hg_img3">
                 </div>
             </div>
         </div>
 
         <div class="hg_button">
-            <a href="gallery.html" class="g_button_anchor"><button class="gallery_button"><img src="images/gallery1.png" alt="" class="gallery_but"></button></a>
+            <a href="gallery.html" class="g_button_anchor"><button class="gallery_button"><img src="gallery1.png" alt="" class="gallery_but"></button></a>
         </div>
     </div>
 
@@ -779,7 +779,7 @@
 
     <script>
         const body = document.body
-        const imageList = ['images/palm3.png', 'images/palm.png', 'images/palm2.png']
+        const imageList = ['palm3.png', 'palm.png', 'palm2.png']
         const image = document.querySelectorAll('.container_img')
         const middleDiv = document.querySelector('.inner_b')
         const containers = document.querySelector('.containers')
@@ -857,11 +857,11 @@
             let check = checker
             hgImage.forEach(function(value) {
                 if (check < photosData.length) {
-                    value.src = `images/Gallery/${photosData[check][0]}.${photosData[check][1]}`
+                    value.src = `${photosData[check][0]}.${photosData[check][1]}`
                     check++
                 } else if (check >= photosData.length && checker < photosData.length) {
                     check = 0
-                    value.src = `images/Gallery/${photosData[check][0]}.${photosData[check][1]}`
+                    value.src = `${photosData[check][0]}.${photosData[check][1]}`
                     check++
                 } 
                 if (checker >= photosData.length) {
