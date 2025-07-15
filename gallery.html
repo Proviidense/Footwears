@@ -276,7 +276,7 @@
 <body>
     <div class="image_viewport image_viewport2">
         <button class="back_button">
-            <img src="images/Gallery/back.png" alt="" class="back_icon" onclick="goBack()">
+            <img src="back.png" alt="" class="back_icon" onclick="goBack()">
         </button>
         <div class="image_view">
             <img src="" alt="" class="view_image">
@@ -326,7 +326,7 @@
             newImageDiv.classList.add('new_image_div')
             newImage.classList.add('new_image')
 
-            newImage.src = `images/Gallery/${theList[0]}.${theList[1]}`
+            newImage.src = `${theList[0]}.${theList[1]}`
 
             newImage.addEventListener('click', function(value) {
                 viewImage(value.target.src)
@@ -351,7 +351,6 @@
         }
 
         function goBack() {
-            console.log('helllle')
             viewPort.classList.add('image_viewport2')
             main.forEach(function(value) {
                 value.classList.remove('image_viewport2')
