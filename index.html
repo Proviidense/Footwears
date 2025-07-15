@@ -3,118 +3,773 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vee's Feet Art</title>
-    <link rel="stylesheet" href="hero.css">
-    <link rel="stylesheet" href="general.css">
-    <link rel="stylesheet" href="services.css">
-    <link rel="stylesheet" href="logos.css">
-    <link rel="stylesheet" href="nav.css">
-    <link rel="stylesheet" href="home_gallery.css">
-    <link rel="stylesheet" href="footer.css">
+    <title>Document</title>
+
+    <style>
+        @keyframes rotateIt {
+            from { transform: rotateY(360deg); }
+            to { transform: rotateY(0deg); }
+        }
+
+        @keyframes slideInBtm {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0%); }
+        }
+
+        @keyframes slideInTop {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0%); }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0%); }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes moveFade {
+            0% { transform: translate(0%, 0%); }
+            50% { transform: translate(-60%, 400%); }
+            55% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes mf {
+            0% { transform: translate(0%, 0%); }
+            55% { transform: translate(80%, 400%); }
+            65%, 100% { opacity: 0; }
+        }
+        body {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: content-box;
+            width: 100%;
+            background-color: rgba(198, 197, 195, 0.9);
+            background-color: rgb(244, 245, 247);
+        }
+
+        .hero_section {
+            background-color: rgb(10, 10, 92);
+            padding: 20px;
+        }
+
+        .main_nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .head_nav {
+            width: 60%;
+            background-color: rgba(106, 109, 116, 0.38);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            column-gap: 60px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 20px;
+            height: 20px;
+            box-shadow: 0px 0px 5px rgba(190, 187, 180, 0.4);
+            opacity: 1;
+        }
+
+        .nav_list {
+            color: white;
+            transition: all 0.5s ease-in-out;
+            font-size: 1.5em;
+            opacity: 1;
+        }
+
+        .nav_list a{
+            text-decoration: none;
+            color: white;
+            opacity: 1;
+        }
+
+        .nav_list:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        #brand_name {
+            font-weight: bolder;
+            color: #db7b05;
+            color: rgb(187, 217, 244);
+            color: rgb(177, 116, 2);
+            color: rgb(187, 217, 244);
+            font-size: 7rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            opacity: 1;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /* .bg_image_div {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .bg_image {
+            height: 100%;
+        } */
+         
+        .containers {
+            display: flex;
+            flex-direction: row;
+            margin-top: -100px;
+            width: 100%;
+        }
+
+        .inner {
+        
+            /* border: 2px solid red; */
+        }
+
+        #inner_one {
+            flex: 0.5;
+            margin-top: 150px;
+        }
+
+        #inner_two {
+            perspective: 1000px;
+            flex: 0.6;
+        }
+
+        #inner_three {
+            flex: 0.5;
+            margin-top: 150px;
+        }
+
+        .container_img {
+            width: 100%;
+        }
+
+        #container_img_one {
+            border: 1px solid rgb(4, 75, 133);
+            border-radius: 40px;
+            width: 50%;
+            margin-left: 25%;
+
+        }
+        #container_img_two {
+            object-fit: contain;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            transform-style: preserve-3d;
+            animation: rotateIt 5s ease-in-out infinite;
+            opacity: 0.5;
+        }
+
+        #container_img_three {
+            border: 1px solid rgb(4, 75, 133);
+            border-radius: 40px;
+            width: 50%;
+            margin-left: 20%;
+        }
+
+        #description_div_two {
+        }
+
+        .description_header {
+            color: #C4C3D0;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        .description {
+            color: #C4C3D0;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .our_service {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .our_services {
+            color: #eeaf26;
+            color: rgb(76, 164, 241);
+            font-size: 3rem;
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .wwd {
+            color: rgb(76, 164, 241);
+        }
+
+        .services_display {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            column-gap: 50px;
+            
+        }
+
+        .service {
+            flex: 1;
+            border: 2px solid rgb(223, 236, 247);
+            border-radius: 30px;
+        }
+
+        .description_text {
+            font-size: 1.5rem;
+            vertical-align: center;
+            color: rgb(4, 75, 133);
+        }
+
+        .sh_img {
+            width: 50%;
+            height: 200px;
+        }
+
+        .s_header {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .s_header_inner {
+            width: 30%;
+            border: 2px solid rgb(223, 236, 247);
+            margin-top: 0px;
+            border-radius: 30px;
+        }
+
+        .sh_div {
+        }
+
+        .service_one, .service_three {
+            margin-top: -150px;
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+
+        .service_two {
+            margin-top: 50px;
+        }
+
+        .service_three {
+
+        }
+
+        .records {
+            color: #f6cf7c;
+            font-size: 2em;
+            font-weight: bolder;
+        }
+
+        .records_div {
+            background-color: rgb(66, 65, 65);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid rgba(93, 91, 91, 0.8);
+            padding: 30px;
+        }
+
+        .hg_img_div {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            height: 300px;
+        }
+
+        .first_inner {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .hg_image {
+            height: 40%;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hg_image2 {
+            height: 70%;
+        }
+
+        .hg_image1, .hg_image3 {
+            width: 50%;
+            margin-top: 150px;
+            opacity: 0.5;
+        }
+
+
+        .hg_img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: rgba(198, 197, 195, 0.9);
+            max-height: 200px;
+        }
+
+
+        .hg_button {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .g_button_anchor {
+            width: 25%;
+            height: 60px;
+            
+        }
+
+        .gallery_button {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            background-color: rgb(187, 217, 244);
+            cursor: pointer;
+            border: none;
+        }
+
+        .gallery_button:hover {
+            opacity: 0.6;
+        }
+
+        .gallery_but {
+            width: 50%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+        .home_gallery {
+            background-color: rgb(66, 65, 65);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            background-color: rgb(10, 10, 92);
+            color: aliceblue;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer_text {
+            text-align: center;
+            color: antiquewhite;
+        }
+
+        .brand_logo_div {
+            position: fixed;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #brand_logo {
+            padding: 0px;
+            margin: 0px;
+            font-size: 6rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+            font-weight: bolder;
+            color: #87827a;
+            opacity: 0.2;
+            user-select: none;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .dotted_logo_div {
+            position: fixed;
+            top: -100px;
+            left: 78%;
+        }
+
+        .dotted_logo {
+            color: #87827a;
+            font-size: 5rem;
+            line-height: 15px;
+            transform: rotateY(180deg);
+            opacity: 0.5;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .div_animate {
+            animation: slideInBtm 2s ease-in-out, fadeOut 3s ease-in-out;
+        }
+
+        .middle_animate {
+            animation: slideInTop 1s ease-in-out;
+        }
+
+        .brand_animate {
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        .move_down_animate {
+            animation: mf 2s ease-in-out;
+        }
+
+        .move_down_animate2 {
+            animation: moveFade 2s ease-in-out;
+        }
+
+        .assurance_div {
+            margin-bottom: 0px;
+            display: flex;
+            flex-direction: row;
+            column-gap: 50px;
+            margin-bottom: 20px;
+        }
+
+        .a_div {
+            flex: 1;
+            border: 0.5px solid rgba(66, 65, 65, 0.05);
+            border-radius: 20px;
+        }
+
+        .a_text {
+            font-size: 1.5em;
+            font-weight: bolder;
+            text-align: center;
+            color: rgb(4, 75, 133);
+        }
+
+        @media (max-width: 700px) {
+            .assurance_div {
+                flex-direction: column;
+            }
+
+            .a_div {
+                margin-top: -10px;
+            }
+
+            .a_text {
+                width: 50%;
+                text-align: start;
+            }
+
+            .hg_img_div {
+                height: 250px;
+            }
+
+            .hg_image1, .hg_image3 {
+                margin-top: 80px;
+            }
+            .hg_image2 {
+                margin-top: 40px;
+            }
+            .head_nav {
+                width: 80%;
+                column-gap: 0.35em;
+                padding: 5px;
+            }
+
+            .nav_list {
+                font-size: 0.7em;
+            }
+
+            .our_services, .wwd {
+                font-size: 0.7em;
+            }
+
+
+            .services_display {
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+                width: 100%;
+                align-items: center;
+                margin-top: 10px;
+                
+            }
+
+            .service {
+                margin: 0px;
+                width: 80%;
+            }
+
+            .s_header_inner {
+                width: 80%;
+            }
+
+            @keyframes moveFade {
+                0% { transform: translateY(0%); }
+                50% { transform: translateY(600%); }
+                55% { opacity: 0; }
+                100% { opacity: 0; }
+            }
+
+            @keyframes mf {
+                0% { transform: translateY(0%); }
+                50% { transform: translateY(650%); }
+                55%, 100% { opacity: 0; }
+            }   
+
+            #brand_name {
+                font-size: 3em;
+                margin: 0px;
+                margin-left: 2%;
+            }
+
+            .containers {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                border-radius: 30px;
+                margin-top: 0px;
+                z-index: -2;
+            }
+
+            .inner {
+                height: 100%;
+            }
+
+            #inner_one {
+                margin: 0px;
+                width: 200%;
+            }
+
+            #inner_two {
+                margin-top: 100%;
+                margin-left: -100%;
+                opacity: 0.3;
+            }
+
+            #inner_three {
+                margin: 0px;
+                width: 200%;
+            }
+            
+            #container_img_three {
+                margin-left: 25%;
+            }
+
+            .description {
+                font-size: 1.2rem;
+            }
+
+            .description_text {
+                font-size: 1.3rem;
+                text-decoration: solid;
+            }
+
+            .dotted_logo_div {
+                top: -40px;
+                left: 80%;
+            }
+
+            .dotted_logo {
+                font-size: 2rem;
+                line-height: 5px;
+                transform: rotateY(160deg);
+            }
+
+            #brand_logo_div {
+                top: 50%;
+
+            }
+
+            #brand_logo {
+                font-size: 2rem;
+            }
+
+            .records {
+                font-size: 1.2em;
+                width: 70%;
+                border: 1px solid gray;
+                border-radius: 10px;
+                padding: 20px;
+                
+            }
+
+            .records_div {
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                row-gap: 10px;
+                margin-top: 10px;
+            }
+
+        }
+
+        @media (min-width: 700px) and (max-width: 1500px) {
+
+            .head_nav {
+                width: 80%;
+                column-gap: 4em;
+                padding: 10px;
+            }
+
+            .nav_list {
+                font-size: 0.9em;
+            }
+
+            .dotted_logo_div {
+                top: -60px;
+                left: 80%;
+            }
+
+            .dotted_logo {
+                font-size: 3rem;
+                line-height: 8px;
+            }
+
+            #brand_logo_div {
+                top: 40%;
+
+            }
+
+            #brand_logo {
+                font-size: 4rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="main_nav">
-        <nav class="head_nav">
-            <p class="nav_list">&#183; Services</p>
-            <p class="nav_list"><a href="gallery.html">&#183; Gallery</a></p>
-            <p class="nav_list">&#183; Products</p>
-            <p class="nav_list">&#183; Sign In</p>
-            <p class="nav_list">&#183; Contact</p>
-        </nav>
+    <div class="brand_logo_div">
+        <p id="brand_logo" class="palm_craft">VEE'S FEET ART</p>
     </div>
+
     <div class="dotted_logo_div">
         <p class="dotted_logo">
             
         </p>
     </div>
-    <div class="brand_logo_div">
-        <p id="brand_logo" class="palm_craft">VEE'S FEET ART</p>
-    </div>
-    <h1 class="the_brand" id="brand_name">Vee's Feet Art</h1>
-    <div class="containers" id="first_container">
-        <div class="inner inner_a" id="inner_three">
-            <img src="palm3.png" alt="" class="container_img" id="container_img_three">
-            <div class="description_div" id="description_div_two">
-                <h2 class="description_header" id="description_header_two">Welcome to Vee's Feet Art: Crafted for Every Step</h2>
-                <p class="description" id="description_two">Vee's Feet Art specializes in creating high quality, hand made footwears, that combines comfort, style, and durability for both male and female. Whether you are stepping out for a casual outing, heading to work, or relaxing at home, our slippers are designed to match your lifestyle and express your unique taste.</p>
+
+    <div class="hero_section">
+        <div class="main_nav">
+            <nav class="head_nav">
+                <p class="nav_list">&#183; Services</p>
+                <p class="nav_list"><a href="gallery.html">&#183; Gallery</a></p>
+                <p class="nav_list">&#183; Products</p>
+                <p class="nav_list">&#183; Sign In</p>
+                <p class="nav_list">&#183; Contact</p>
+            </nav>
+        </div>
+
+        <h1 class="the_brand" id="brand_name">Vee's Feet Art</h1>
+
+        <div class="containers" id="first_container">
+            <div class="inner inner_a" id="inner_three">
+                <img src="images/palm3.png" alt="" class="container_img" id="container_img_three">
+                <div class="description_div" id="description_div_two">
+                    <h2 class="description_header" id="description_header_two">Welcome to Vee's Feet Art: Crafted for Every Step:</h2>
+                    <p class="description" id="description_two">Vee's Feet Art specializes in creating high quality, hand made footwears, that combines comfort, style, and durability for both male and female. Whether you are stepping out for a casual outing, heading to work, or relaxing at home, our slippers are designed to match your lifestyle and express your unique taste.</p>
+                </div>
+            </div>
+        
+            <div class="inner inner_b" id="inner_two">
+                <img src="images/palm.png" alt="" class="container_img" id="container_img_two">
+            </div>
+            
+    
+            <div class="inner inner_a" id="inner_one">
+                <img src="images/palm2.png" alt="" class="container_img" id="container_img_one">
+                <div class="description_div" id="description_div_one">
+                    <h2 id="description_header_one" class="description_header">Quality at it's peak:</h2>
+                    <p id="description_one" class="description" >
+                        Experience the perfect blend of traditional craftmanship and modern comfort. Each pair is meticulously handcrafted using premium materials.
+                    </p>
+                </div>
             </div>
         </div>
-    
-        <div class="inner inner_b" id="inner_two">
-            <img src="palm.png" alt="" class="container_img" id="container_img_two">
+    </div>
+
+    <div class="our_service">
+        <div class="s_header">
+            <div class="s_header_inner">
+                <h1 class="our_services">Our Services:</h1>
+                <div class="sh_div">
+                    <p class="wwd">WHAT WE DO?</p>
+                </div>
+            </div>
         </div>
         
+        <div class="services_display">
+            <div class="service service_one">
+                <p class="description description_text">We craft your favorite pairs to the details, with care and attention using the finest materials, to ensure a perfect blend of tradition and trend. Our unisex collections are stylish, versatile and built to last...Great style knows no gender, contact us today, let's bring your ideas to life. Repairing and restructuring of old shoes/sandals/palms is also one of our rendered services</p>
+            </div>
 
-        <div class="inner inner_a" id="inner_one">
-            <img src="palm2.png" alt="" class="container_img" id="container_img_one">
-            <div class="description_div" id="description_div_one">
-                <h2 id="description_header_one" class="description_header">Quality at it's peak</h2>
-                <p id="description_one" class="description" >
-                    Experience the perfect blend of traditional craftmanship and modern comfort. Each pair is meticulously handcrafted using premium materials.
-                </p>
+            <div class="service service_two">
+                <p class="description description_text">Delivery to door step is another service we offer. We ensure that your products are safetly and swiftly delivered to you at you comfort zone. Drop your orders now</p>
+            </div>
+
+            <div class="service service_three">
+                <p class="description description_text">We also have already made foot palms, ready and waiting to be sold out at affordable prices in both retail and wholesale prices. We ensure that comfort, beauty and durability are sold at affordable rates. Go through our products today, and pick your favorite. </p>
             </div>
         </div>
     </div>
 
-
-    <div class="h_line_div">
-        <div class="h_line"></div>
+    <div class="records_div">
+        <li class="records_one records">Over 100+ satisfied customer</li>
+        <li class="records_two records">Comfort + Beauty</li>
+        <li class="records_three records">100+ different footwear designs</li>
     </div>
 
-    <div class="details_div">
-        <h1 class="our_services">Our Services:</h1>
-        <div class="details_div_two">
-            <div class="inner_details">
-                <div class="inner_details_img">
-                    <img src="" alt="" class="details_image">
-                </div>
-    
-                <div class="text_div">
-                    <p class="description description_text">We craft your favorite pairs to the details, with care and attention using the finest materials, to ensure a perfect blend of tradition and trend. Our unisex collections are stylish, versatile and built to last...Great style knows no gender, contact us today, let's bring your ideas to life. Repairing and restructuring of old shoes/sandals/palms is also one of our rendered services</p>
+    <div class="home_gallery">
+        <div class="hg_img_div">
+            <div class="first_inner">
+                <div class="hg_image hg_image1">
+                    <img src="images/palm2.png" alt="" class="hg_img hg_img1">
                 </div>
             </div>
-    
-            <div class="inner_details">
-                <div class="inner_details_img">
-                    <img src="" alt="" class="details_image">
-                </div>
-    
-                <div class="text_div">
-                    <p class="description description_text">We also have already made foot palms, ready and waiting to be sold out at affordable prices. We ensure that comfort, beauty and durability are sold at affordable rates. Go through our products, and pick your favorite. Delivery to door step is another service we offer, so you don't have to bother or stress.</p>
+
+            <div class="hg_image hg_image2">
+                <img src="images/palm.png" alt="" class="hg_img hg_img2">
+            </div>
+
+            <div class="first_inner">
+                <div class="hg_image hg_image3">
+                    <img src="images/palm3.png" alt="" class="hg_img hg_img3">
                 </div>
             </div>
         </div>
+
+        <div class="hg_button">
+            <a href="gallery.html" class="g_button_anchor"><button class="gallery_button"><img src="images/gallery1.png" alt="" class="gallery_but"></button></a>
+        </div>
     </div>
 
-    <p class="dots">...</p>
+    <div class="assurance_div">
+        <div class="a_div">
+            <p class="a_text">We craft....</p>
+        </div>
 
-    <div class="main_home_g">
-        <div class="home_gallery">
-            <div class="hg_div">
-                <div class="first_inner">
-                    <div class="inner_hg inner_hg1 none">
-                        <img src="palm.png" alt="" class="hg_image hg_image1">
-                    </div>
-                </div>
-    
-                <div class="inner_hg inner_hg2 none">
-                    <img src="palm2.png" alt="" class="hg_image hg_image2">
-                </div>
-        
-                <div class="first_inner">
-                    <div class="inner_hg inner_hg3 none">
-                        <img src="palm3.png" alt="" class="hg_image hg_image3">
-                    </div>
-                </div>
-            </div>
-    
-            <div class="vg_div">
-                <a href="gallery.html" class="g_link">
-                    <button class="view_gallery">
-                        <img src="gallery1.png" alt="" class="gallery_image">
-                    </button>
-                </a>
-            </div>
+        <div class="a_div">
+            <p class="a_text">We repair....</p>
+        </div>
+
+        <div class="a_div">
+            <p class="a_text">We deliver....</p>
+        </div>
+
+        <div class="a_div">
+            <p class="a_text">We satisfy....</p>
         </div>
     </div>
 
@@ -122,10 +777,151 @@
         <p class="footer_text">&copy; Vee's FeetArt. All rights reserved.</p>
     </footer>
 
-    
-    <script src="photos.js"></script>
-    <script src="script.js">
-        
+    <script>
+        const body = document.body
+        const imageList = ['images/palm3.png', 'images/palm.png', 'images/palm2.png']
+        const image = document.querySelectorAll('.container_img')
+        const middleDiv = document.querySelector('.inner_b')
+        const containers = document.querySelector('.containers')
+        const theBrand = document.querySelector('.the_brand')
+        const animateDiv = document.querySelectorAll('.inner_a')
+
+        const innerH = document.querySelectorAll('.hg_image')
+        const hgImage = document.querySelectorAll('.hg_img')
+
+        const photosData = [['palm1', 'png'], ['palm2', 'png'], ['palm3', 'png'], ['palm4', 'png'], ['palm5', 'png'], ['palm6', 'png'], ['palm7', 'png'], ['palm8', 'png'], ['palm9', 'png'], ['palm10', 'png'], ['palm11', 'png'], ['palm12', 'png'], ['palm13', 'png'], ['palm14', 'png']]
+
+        const dText = document.querySelectorAll('.description_text')
+        const text1 = dText[1].innerText
+        const text2 = dText[2].innerText
+
+        addEventListener('resize', function(event) {
+            switchTexts()
+        })
+
+        switchTexts()
+
+        function switchTexts() {
+            if (body.clientWidth <= 700) {
+                dText[1].innerText = text2
+                dText[2].innerText = text1
+            } else {
+                dText[1].innerText = text1
+                dText[2].innerText = text2
+            }
+        }
+
+        document.querySelector('.dotted_logo').innerText = '....................\n..................\n................\n..............\n............\n..........'
+
+        const observer = new IntersectionObserver(function(values) {
+            values.forEach(function(value) {
+                if (value.isIntersecting) {
+                    animateDiv[0].classList.add('div_animate')
+                    animateDiv[1].classList.add('div_animate')
+                    middleDiv.classList.add('middle_animate')
+                    theBrand.classList.add('brand_animate')
+                    rotateBg()
+                } else {
+                    animateDiv[0].classList.remove('div_animate')
+                    animateDiv[1].classList.remove('div_animate')
+                    middleDiv.classList.remove('middle_animate')
+                    theBrand.classList.remove('brand_animate')
+                }
+            })
+        })
+
+        function rotateBg(value) {
+            let count = 0
+            image.forEach(function(value) {
+                value.src = imageList[count]
+                count++
+            })
+            reshufle()
+        }
+
+        function reshufle() {
+            imageList.push(imageList[0])
+            imageList.splice(0, 1)
+        }
+
+        observer.observe(containers)
+
+        let innerHg = []
+        innerH.forEach(function(theValue) {
+            innerHg.push(theValue)
+        })
+
+        let checker = 0
+
+        function shuffleImage() {
+            let check = checker
+            hgImage.forEach(function(value) {
+                if (check < photosData.length) {
+                    value.src = `images/Gallery/${photosData[check][0]}.${photosData[check][1]}`
+                    check++
+                } else if (check >= photosData.length && checker < photosData.length) {
+                    check = 0
+                    value.src = `images/Gallery/${photosData[check][0]}.${photosData[check][1]}`
+                    check++
+                } 
+                if (checker >= photosData.length) {
+                    checker = 0
+                    check++
+                }
+            })
+            checker++
+            
+        }
+
+        function animateGallery() {
+            innerHg.forEach(function(theValue) {
+                theValue.classList.remove(theValue.classList[2])
+            })
+            let target1 = innerHg[0].getBoundingClientRect()
+            let target2 = innerHg[1].getBoundingClientRect()
+            let target3 = innerHg[2].getBoundingClientRect()
+
+            let newTarget1 = [target3.x-target1.x, target3.y-target1.y]
+            let newTarget2 = [target1.x-target2.x, target1.y-target2.y]
+            let newTarget3 = [((target2.x-target3.x)-(target2.right-target3.x)), target2.y-target3.y]
+
+            const style = document.createElement('style')
+            style.innerHTML = `
+            @keyframes inner1 {
+                from { transform: translate(0px, 0px); }
+                to { transform: translate(${newTarget1[0]}px, ${newTarget1[1]}px); }
+            }
+            @keyframes inner2 {
+                from { transform: translate(0px, 0px); }
+                to { transform: translate(${newTarget2[0]}px, ${newTarget2[1]}px);height: 40%;width: 50%;opacity: 0.5; }
+            }
+            @keyframes inner3 {
+                from { transform: translate(0px, 0px); }
+                to { transform: translate(${newTarget3[0]}px, ${newTarget3[1]}px);height: 70%;width: 100%;opacity: 1; }
+            }
+                
+            .inner1_animate {
+                animation: inner1 2s ease-in-out forwards;
+            }
+            .inner2_animate {
+                animation: inner2 2s ease-in-out forwards;
+            }
+            .inner3_animate {
+                animation: inner3 2s ease-in-out forwards;
+            }
+            `
+            document.head.appendChild(style)
+
+            innerHg[0].classList.add('inner1_animate')
+            innerHg[1].classList.add('inner2_animate')
+            innerHg[2].classList.add('inner3_animate')
+            shuffleImage()
+            
+        }
+
+        setInterval(function(val) {
+            animateGallery()
+        }, 3000)
     </script>
 </body>
 </html>

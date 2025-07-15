@@ -4,25 +4,279 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vee's Gallery</title>
-    <link rel="stylesheet" href="general.css">
-    <link rel="stylesheet" href="logos.css">
-    <link rel="stylesheet" href="nav.css">
-    <link rel="stylesheet" href="gallery.css">
-    <link rel="stylesheet" href="image_view.css">
     <style>
+        @keyframes fadeOut {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0%); }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        body {
+            background-color: rgb(10, 10, 92);
+        }
+
+        .brand_logo_div {
+            position: fixed;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            margin: 0px;
+        }
+
         #brand_logo {
-            color: #9A5602;
+            padding: 0px;
+            margin: 0px;
+            font-size: 6rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+            font-weight: bolder;
+            color: #C3BFB8;
+            opacity: 0.2;
+            user-select: none;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .dotted_logo_div {
+            position: fixed;
+            top: -100px;
+            left: 78%;
         }
 
         .dotted_logo {
-            color: #9A5602;
-        }  
+            color: #C3BFB8;
+            font-size: 5rem;
+            line-height: 15px;
+            transform: rotateY(180deg);
+            opacity: 0.5;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .gallery_heading {
+            color: #C0963D;
+            color: rgb(76, 164, 241);
+            font-size: 3rem;
+            animation: slideInLeft 2s ease-in-out;
+        }
+
+        .gallery {
+            padding: 30px;
+            border: 2px solid rgba(110, 109, 109, 0.3);
+
+            background-color: rgb(244, 245, 247);
+        }
+
+        .gallery_photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            border-radius: 60px;
+            border: 1px solid rgba(1, 1, 1, 0.4);
+            animation: fadeOut 2s ease-in-out;
+        }
+
+        .new_image_div {
+            background-color: rgba(198, 197, 195, 0.9);
+            border: 2px solid rgb(223, 236, 247);
+        }
+
+        .new_image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main_nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .head_nav {
+            width: 60%;
+            background-color: rgba(106, 109, 116, 0.38);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            column-gap: 60px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 20px;
+            height: 20px;
+            box-shadow: 0px 0px 5px rgba(190, 187, 180, 0.4);
+            opacity: 1;
+        }
+
+        .nav_list {
+            color: white;
+            transition: all 0.5s ease-in-out;
+            font-size: 1.5em;
+            opacity: 1;
+        }
+
+        .nav_list a{
+            text-decoration: none;
+            color: white;
+            opacity: 1;
+        }
+
+        .nav_list:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        } 
+
+        
+
+        .image_viewport {
+            min-width: 100vw;
+            min-height: 100vh;
+            background-color: black;
+            position: fixed;
+            top: 0px;
+            left: 0px;  
+            opacity: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .image_viewport2 {
+            display: none;
+        }
+
+        .image_view {
+            max-width: 50%;
+            height: 400px;
+            flex: 1;
+            background-color: rgba(198, 197, 195, 0.9);
+            opacity: 1;
+            animation: fadeOut 1s ease-in-out;
+        }
+
+        .view_image {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            object-fit: contain;
+        }
+
+        .back_button {
+            background-color: black;
+            border: none;
+            height: 60px;
+            position: absolute;
+            top: 10px;
+            left: 0px;
+        }
+
+        .back_icon {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 700px) {
+            .gallery_heading {
+                font-size: 1.5rem;
+            }
+
+            .gallery_photos {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .back_button {
+                height: 30px;
+            }
+
+            .head_nav {
+                width: 60%;
+                column-gap: 0.35em;
+                padding: 10px;
+            }
+
+            .nav_list {
+                font-size: 0.6em;
+            }
+
+            .dotted_logo_div {
+                top: -40px;
+                left: 80%;
+            }
+
+            .dotted_logo {
+                font-size: 2rem;
+                line-height: 5px;
+                transform: rotateY(160deg);
+            }
+
+            #brand_logo_div {
+                top: 50%;
+
+            }
+
+            #brand_logo {
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 700px) and (max-width: 1500px) {
+            .gallery_photos {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+
+            .head_nav {
+                width: 80%;
+                column-gap: 4em;
+                padding: 10px;
+            }
+
+            .nav_list {
+                font-size: 0.9em;
+            }
+
+            .dotted_logo_div {
+                top: -60px;
+                left: 80%;
+            }
+
+            .dotted_logo {
+                font-size: 3rem;
+                line-height: 8px;
+            }
+
+            #brand_logo_div {
+                top: 40%;
+
+            }
+
+            #brand_logo {
+                font-size: 4rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="image_viewport image_viewport2">
         <button class="back_button">
-            <img src="back.png" alt="" class="back_icon" onclick="goBack()">
+            <img src="images/Gallery/back.png" alt="" class="back_icon" onclick="goBack()">
         </button>
         <div class="image_view">
             <img src="" alt="" class="view_image">
@@ -54,10 +308,55 @@
         </div>
     </div>
 
-    <script src="photos.js"></script>
+    <script>
+        const photosData = [['palm1', 'png'], ['palm2', 'png'], ['palm3', 'png'], ['palm4', 'png'], ['palm5', 'png'], ['palm6', 'png'], ['palm7', 'png'], ['palm8', 'png'], ['palm9', 'png'], ['palm10', 'png'], ['palm11', 'png'], ['palm12', 'png'], ['palm13', 'png'], ['palm14', 'png']]
+        document.querySelector('.dotted_logo').innerText = '....................\n..................\n................\n..............\n............\n..........'
+        const galleryPhotos = document.querySelector('.gallery_photos')
 
-    <script src="script2.js">
-        
+        const main = document.querySelectorAll('.main')
+        const viewPort = document.querySelector('.image_viewport')
+        const theImage = document.querySelector('.view_image')
+
+
+
+        function addPhotos(theList) {
+            const newImageDiv = document.createElement('div')
+            const newImage = document.createElement('img')
+
+            newImageDiv.classList.add('new_image_div')
+            newImage.classList.add('new_image')
+
+            newImage.src = `images/Gallery/${theList[0]}.${theList[1]}`
+
+            newImage.addEventListener('click', function(value) {
+                viewImage(value.target.src)
+            })
+
+
+            newImageDiv.appendChild(newImage)
+            galleryPhotos.appendChild(newImageDiv)
+
+        }
+
+        photosData.forEach(function(value) {
+            addPhotos(value)
+        })
+
+        function viewImage(image_url) {
+            main.forEach(function(value) {
+                value.classList.add('image_viewport2')
+            })
+            viewPort.classList.remove('image_viewport2')
+            theImage.src = image_url
+        }
+
+        function goBack() {
+            console.log('helllle')
+            viewPort.classList.add('image_viewport2')
+            main.forEach(function(value) {
+                value.classList.remove('image_viewport2')
+            })
+        }
     </script>
 </body>
 </html>
